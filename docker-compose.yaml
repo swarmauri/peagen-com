@@ -1,0 +1,10 @@
+services:
+  peagen-com:
+    build: .
+    container_name: peagen-com
+    restart: unless-stopped
+    labels:
+      site.host: peagen.com
+      site.kind: mdwrk-lander
+    ports:
+      - "127.0.0.1:0:80"
