@@ -90,6 +90,53 @@ export const siteContent = {
           { name: "DNS plan", description: "Render the Namecheap record plan.", install: "npm run dns:plan", api: ["npmctl plan desired-state/dns.yaml"] }
         ] }
       ]
+    },
+    {
+      slug: "/articles/scoped-generation-needs-bounded-delivery/",
+      kind: "feature",
+      title: "Scoped generation needs bounded delivery | Peagen",
+      description: "How Peagen turns scoped intent into bounded work units, reviewable changes, and governed release handoff.",
+      h1: "Scoped generation needs bounded delivery.",
+      intro: "Peagen is strongest when it treats generation as a bounded delivery problem instead of a free-form text exercise. The repository surface already shows that bias through content-pack checks, deterministic builds, Docker publication, DNS plans, and explicit proxy orchestration.",
+      sections: [
+        { id: "boundary", kind: "feature_detail", title: "Generation has to terminate in a reviewable unit", body: "The product promise is not just that Peagen can produce output. The stronger promise is that it can turn intent into bounded work that is inspectable before it ships. In this repo, that shows up as explicit content, typed routes, build scripts, and deploy workflows that keep the publication surface narrow enough to review.", items: [
+          { title: "Scoped change sets", description: "The site positions Peagen around bounded implementation work instead of open-ended autonomous behavior." },
+          { title: "Repo-owned delivery", description: "Build, Docker, proxy, and DNS all live in the same repository, so the publication lane stays inspectable." },
+          { title: "Proof before release", description: "The published command surface requires `npm run check`, `npm run build`, `npm run dns:plan`, and `npm run proxy:plan` before publication." }
+        ] },
+        { id: "proof", kind: "proof_matrix", title: "What the repo already proves", items: [
+          { claim: "The content surface is typed and buildable.", status: "observed", evidence: "`packages/site-content-pack` builds before the site build runs." },
+          { claim: "Publication is not hidden behind a platform dashboard.", status: "observed", evidence: "Deploy, DNS, and proxy orchestration are exposed as repo scripts and workflows." },
+          { claim: "Generated output can be reviewed as a bounded artifact.", status: "observed", evidence: "Static build outputs, Docker inputs, and desired-state files are all local repo artifacts." }
+        ] },
+        { id: "commands", kind: "package_grid", title: "Commands that reinforce bounded delivery", packages: [
+          { name: "Check", description: "Validates the content pack and the app before any publish step.", install: "npm run check", api: ["npm run check"] },
+          { name: "Build", description: "Produces the static site and the artifacts needed for Docker-backed publication.", install: "npm run build", api: ["npm run build"] },
+          { name: "DNS plan", description: "Renders the intended DNS state before any mutation.", install: "npm run dns:plan", api: ["npmctl plan desired-state/dns.yaml"] },
+          { name: "Proxy plan", description: "Renders the intended proxy host state before apply.", install: "npm run proxy:plan", api: ["npmctl plan desired-state/proxy.yaml"] }
+        ] }
+      ]
+    },
+    {
+      slug: "/articles/repo-owned-publication-for-peagen-com/",
+      kind: "feature",
+      title: "Repo-owned publication for peagen.com | Peagen",
+      description: "Why the peagen.com repository owns its build, Docker, DNS, proxy, and deploy evidence directly.",
+      h1: "Repo-owned publication keeps Peagen explainable.",
+      intro: "The peagen.com repository does more than host brand copy. It owns the Docker service, deploy workflow, DNS desired state, proxy desired state, and the commands that connect those pieces. That matters because operator truth stays close to the site being published.",
+      sections: [
+        { id: "ownership", kind: "feature_detail", title: "The publication lane is deliberately local to the repo", body: "A site becomes harder to trust when build, proxy, and DNS rules are scattered across outside dashboards or undocumented machine state. Here the publication lane is explicit: the repo includes deploy helpers, workflow files, desired-state documents, and a named Docker service for the public site.", items: [
+          { title: "Named Docker service", description: "The repo builds and deploys the `peagen-com` service directly." },
+          { title: "Dedicated workflows", description: "Separate CI, DNS, and deploy workflows make the publication path inspectable." },
+          { title: "Desired state checked into git", description: "Proxy and DNS plans are represented as repo files instead of operator memory." }
+        ] },
+        { id: "faq", kind: "faq", title: "Why this matters", items: [
+          { question: "Why put deploy orchestration in the site repo?", answer: "Because the public site, its DNS, and its proxy contract are part of the product surface being published." },
+          { question: "What does an operator verify first?", answer: "That the content pack passes, the app builds, the Docker target is valid, and the DNS/proxy plans match the intended state." },
+          { question: "What does this say about Peagen itself?", answer: "It reinforces the product claim that generated work should end in bounded, reviewable, governed delivery artifacts." }
+        ] },
+        { id: "cta", kind: "cta", title: "Use the repo as the authority", body: "Read the repo scripts and workflows as part of the product story. Peagen is not only describing governed delivery here; it is publishing the site through that same operating model." }
+      ]
     }
   ]
 };
