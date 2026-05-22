@@ -53,12 +53,17 @@ footer {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  padding: 8px 14px 8px 10px;
+  border: 1px solid rgba(243, 244, 223, 0.14);
+  border-radius: 22px;
+  background: rgba(243, 244, 223, 0.9);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
 }
 
 .site-brand img {
   display: block;
   width: auto;
-  height: 62px;
+  height: 54px;
   object-fit: contain;
 }
 

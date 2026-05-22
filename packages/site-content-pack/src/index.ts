@@ -14,6 +14,12 @@ export const siteContent = {
       { label: "Proof", href: "/proof/" },
       { label: "Docs", href: "https://docs.peagen.com" }
     ],
+    compactLinks: [
+      { label: "Platform", href: "/platform/" },
+      { label: "Proof", href: "/proof/" },
+      { label: "Bounded delivery", href: "/articles/scoped-generation-needs-bounded-delivery/" },
+      { label: "Publication model", href: "/articles/repo-owned-publication-for-peagen-com/" }
+    ],
     cta: { label: "Get started", href: "/platform/" }
   },
   footer: {
@@ -40,7 +46,7 @@ export const siteContent = {
       h1: "Peagen",
       intro: "Peagen turns scoped intent into traceable implementation workflows, package changes, and release-ready artifacts. The site packages product positioning, structured metadata, and deployment evidence in a standalone MdWrk lander repository.",
       sections: [
-        { id: "hero", kind: "hero", eyebrow: "Peagen", title: "Agentic project generation and orchestration for governed delivery.", subtitle: "Peagen turns scoped intent into traceable implementation workflows, package changes, and release-ready artifacts." },
+        { id: "hero", kind: "hero", eyebrow: "Agentic delivery", title: "Agentic project generation and orchestration for governed delivery.", subtitle: "Peagen turns scoped intent into traceable implementation workflows, package changes, and release-ready artifacts." },
         { id: "platform", kind: "feature_grid", title: "What this site owns", items: [
           { title: "Product narrative", description: "Canonical product messaging, audience positioning, and calls to action for peagen.com." },
           { title: "Structured discovery", description: "Search, assistant, social, and linked-data metadata generated from the content pack." },
