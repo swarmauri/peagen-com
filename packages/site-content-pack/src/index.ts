@@ -25,7 +25,7 @@ export const siteContent = {
   footer: {
     note: "Peagen is maintained by swarmauri.",
     links: [
-      { label: "GitHub", href: "https://github.com/swarmauri/peagen-com" },
+      { label: "GitHub", href: "https://github.com/swarmauri/peagen" },
       { label: "Docs", href: "https://docs.peagen.com" }
     ]
   },
