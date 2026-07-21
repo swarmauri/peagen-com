@@ -1,0 +1,20 @@
+apiVersion: npmctl.com/v1
+schemaVersion: 2
+
+proxy_hosts:
+  - domain_names:
+      - "peagen.com.localhost"
+      - "www.peagen.com.localhost"
+    forward_scheme: http
+    forward_host: peagen-com
+    forward_port: 80
+    ssl_forced: 0
+    http2_support: 0
+    hsts_enabled: 0
+    hsts_subdomains: 0
+    allow_websocket_upgrade: 1
+    block_exploits: 1
+    meta:
+      managed_by: npmctl
+      owner: peagen-com
+      resource_id: proxy.peagen-com.development
