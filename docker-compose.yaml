@@ -9,11 +9,15 @@ services:
     expose:
       - "80"
     networks:
-      dockerwp:
+      peagen-com-private: {}
+      portwyrm-edge:
         aliases:
           - peagen-com
 
 networks:
-  dockerwp:
-    name: dockerwp
+  peagen-com-private:
+    name: peagen-com-private
+    internal: true
+  portwyrm-edge:
+    name: portwyrm-edge
     external: true
